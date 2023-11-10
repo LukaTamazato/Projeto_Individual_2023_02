@@ -1,7 +1,17 @@
+/* Começo do Header */
+.icon{
+    width: 70px; 
+}
+.header{
+
+}
 .navbar{
-    list-style: none;
-    width: 300px;
     display: flex;
+    list-style: none;
     justify-content: space-evenly;
-    align-items: center;
+    align-self: center;
+}
+.header .container{
+    justify-content: space-evenly;
+    
 }
