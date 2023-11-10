@@ -1,4 +1,7 @@
 /* Começo do Header */
+*{
+font-family: Arial, Helvetica, sans-serif;
+}
 .icon{
     width: 70px; 
 }
@@ -10,8 +13,19 @@
     list-style: none;
     justify-content: space-evenly;
     align-self: center;
+    width: 80%;
 }
 .header .container{
     justify-content: space-evenly;
-    
+    display: flex;
+    background: linear-gradient(to bottom right,#FF2400, #FD2400,#FE2400,#EE2400);
+    padding: 0;
+    width: 100%;
+}
+.TituloSite{
+    font-weight: bold;
+}
+.login{
+    width: fit-content;
+    background-color: rgb(236, 79, 5);
 }
