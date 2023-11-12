@@ -1,31 +1,50 @@
 /* Começo do Header */
 *{
 font-family: Arial, Helvetica, sans-serif;
+color: white;
+
 }
 .icon{
     width: 70px; 
-}
-.header{
-
 }
 .navbar{
     display: flex;
     list-style: none;
     justify-content: space-evenly;
-    align-self: center;
+    align-items: center;
     width: 80%;
 }
 .header .container{
     justify-content: space-evenly;
     display: flex;
-    background: linear-gradient(to bottom right,#FF2400, #FD2400,#FE2400,#EE2400);
-    padding: 0;
     width: 100%;
+    border: bottom 3px solid #0000;
+    background: linear-gradient(to bottom right,#FF2400, #FD2400,#FE2400,#EE2400);
+
+}
+.container{
+    display: flex;
+    width: 70%;
+    margin: auto;
 }
 .TituloSite{
     font-weight: bold;
 }
 .login{
     width: fit-content;
-    background-color: rgb(236, 79, 5);
+    background-color: rgba(255, 102, 0, 0.829);
+}
+a{
+ text-decoration: none;
+ color: white;
+}
+/* Final do Header */
+
+/* Começo do body*/
+.boxTexto{
+    width: 500px;
+    margin: auto;
+}
+.banner .container{
+    background-color: rgba(51, 51, 51, 0.979);
 }
