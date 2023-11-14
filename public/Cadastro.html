@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragões de Dungeons and Dragons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="index.html"><img class="icon" src="assets/imgs/IconSite.png"></a>
+            <ul class="navbar">
+                <li><span class="TituloSite"><a href="index.html #cultura">Cultura</a></span></li>
+                <li><span class="TituloSite"><a href="index.html #tiposDragoes">Tipos de dragões</a></span></li>
+                <li><span class="TituloSite"><a href="index.html #caracteristica">Caracteristicas</a></span></li>
+                <li><Span class="TituloSite"><a href="index.html #sobreMim"> Sobre Mim</a></Span></li>
+                <button class="botao"><span class="TituloSite" ><a href="Login.html">Login</a></span></button>
+                <button class="estaAqui"><span class="TituloSite"><a href="Cadastro.html">Cadastro</a></span></button>
+            </ul>
+        </div>
+    </div>
+    <div class="backgroundCadastro">
+        <div class="banner">
+            <div class="box">
+                <h1>Crie seu covil:</h1>
+                <div class="input">
+                Nome completo:
+                <input type="text" id="iptNome">
+                </div>
+                <div class="input">
+                Email:   
+                <input type="text" id="iptEmail">
+                </div>
+                <div class="input">
+                Senha:
+                <input type="password" id="iptSenha">
+                </div>
+                <div class="input">
+                <h3>Qual tipo de dragão você escolhe:</h3>
+                <br>
+                <select class="input" id="TipoDragao">
+                <option value="C">Cromático</option>
+                <option value="M">Metálico</option>
+                </select>
+                <br><br><br>
+                <h3>Qual elemento de sopro você escolhe:</h3>
+                <select class="input" id="dragao">
+                <option value="F">Fogo</option>
+                <option value="R">Raio</option>
+                <option value="G">Gelo</option>
+                <option value="V">Veneno</option>
+                <option value="A">Acido</option>
+                </select>
+                </div>
+                <div class="input">
+                    <button class="botao" onclick="cadastrar()">Cadastrar-se</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <li><a href="https://www.instagram.com/luka.tamazato.21/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a></li>
+            <li><a href = "mailto:lukaejitamazato@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a></li>
+            <li><a href="https://www.linkedin.com/in/luka-tamazato-436b60224/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> </li>
+            <li><a href="https://github.com/LukaTamazato" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a></li>
+        </div>
+    </footer>
+</body>
+
+</html>
