@@ -20,10 +20,9 @@ padding: 0%;
     justify-content: space-evenly;
     display: flex;
     width: 100%;
-    border: bottom 2px solid #2c2c2c;
+    border-bottom: 2px solid #2c2c2c;
     background-color: #ee7828;
     position: fixed;
-/* Border bottom e nav bar mt baixa */
 }
 .container{
     display: flex;
@@ -31,18 +30,18 @@ padding: 0%;
 
 }
 .TituloSite{
+    color: #2c2c2c;
     font-weight: bold;
 }
-.login{
+.navbar .login{
     width: 80px;
     height: 40px;
     color:#2c2c2c;
     background-color: #c5baaa;
-    /* color <> do q eu passei */
 }
 a{
  text-decoration: none;
- color: #2c2c2c;
+ color:#2c2c2c;
 }
 /* Final do Header */
 
@@ -52,6 +51,7 @@ a{
     margin: auto;
 }
 .banner .container{
+    padding-top: 115px;
     background-color: #2c2c2ce1;
 }   
 .banner{
@@ -63,4 +63,18 @@ a{
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
+}
+/* Fim do body */
+.footer {
+    height: 80px;
+    background-color: #ee7828;
+    border-top: 2px solid #2c2c2c;
+    list-style: none;
+    display: flex;
+}
+.footer .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
 }
