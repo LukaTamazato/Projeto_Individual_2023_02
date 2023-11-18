@@ -28,25 +28,29 @@
                 <h1>Crie seu covil:</h1>
                 Nome completo:
                 <div class="campo">
-                <input class="input" type="text" id="iptNome">
+                <input class="input" type="text" id="iptNome" placeholder="Joao Antonio">
                 </div>
                 Email:   
                 <div class="campo">
-                <input class="input" type="text" id="iptEmail">
+                <input class="input" type="email" id="iptEmail" placeholder="joaoantonio21@mail.com">
+                </div>
+                Titulo de dragão:
+                <div class="campo">
+                <input class="input" type="text" id="iptTitulo" placeholder="Guardião das Chamas">
                 </div>
                 Senha:
                 <div class="campo">
-                <input class="input" type="password" id="iptSenha">
+                <input class="input" type="password" id="iptSenha" placeholder="********">
                 </div>
-                <div class="campo">
                 <h3>Qual tipo de dragão você escolhe:</h3>
-                <br>
+                <div class="campo">
                 <select class="input" id="TipoDragao">
                 <option class="input" value="C">Cromático</option>
                 <option class="input" value="M">Metálico</option>
                 </select>
-                <br><br><br>
+                </div>
                 <h3>Qual elemento de sopro você escolhe:</h3>
+                <div class="campo">
                 <select class="input" id="dragao">
                 <option class="input" value="F">Fogo</option>
                 <option class="input" value="R">Raio</option>
@@ -55,8 +59,8 @@
                 <option class="input" value="A">Ácido</option>
                 </select>
                 </div>
-                <div>
-                    <button class="botao" onclick="cadastrar()">Cadastrar-se</button>
+                <div class="campo">
+                <button class="botao" onclick="cadastrar()">Cadastrar-se</button>
                 </div>
             </div>
         </div>
