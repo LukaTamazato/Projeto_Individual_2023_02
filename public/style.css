@@ -5,6 +5,12 @@ color: #FCF7F8;
 margin: 0;
 padding: 0%;
 }
+.imagens{
+    width: 500px;
+}
+.imagensMaior{  
+    width: 350px;
+}
 .icon{
     width: 70px; 
 }
@@ -142,4 +148,8 @@ p{
     border-radius: 12px;
     text-align: center;
 
+}
+/* Covil */
+.navbar .icon{
+    width: 37px;
 }
