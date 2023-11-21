@@ -7,9 +7,7 @@ padding: 0%;
 }
 .imagens{
     width: 500px;
-}
-.imagensMaior{  
-    width: 350px;
+
 }
 .icon{
     width: 70px; 
@@ -60,7 +58,7 @@ p{
 }
 .banner .container{
     padding-top: 115px;
-    background-color: #2c2c2ce1;
+    background-color: #2c2c2cef;
 }   
 .banner{
     width: 70%;
@@ -69,8 +67,7 @@ p{
 .background{
     background-image: url('assets/imgs/BackgroundHome.jpg');
     background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover;
+
 }
 /* Fim do body */
 
@@ -93,14 +90,12 @@ p{
 /* Cadastro/login  */
 .backgroundCadastro{
     background-image: url('assets/imgs/BackgroundCadastro.jpg');
-    background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
     height: 1200px;
 }
 .backgroundLogin{
     background-image: url('assets/imgs/BackgroundLogin.jpg');
-    background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
     height: 1000px;
