@@ -3,8 +3,7 @@ use ProjetoIndividual20232;
 
 create table dragao(
 idDragao int primary key auto_increment,
-tipo int,
-elemento int
+tipoDragao varchar(10)
 )auto_increment = 1000;
 
 create table usuario(
@@ -24,3 +23,5 @@ fkUsuario int,
 constraint fkTituloUsuario foreign key (fkUsuario)
 references usuario(idUsuario)
 );
+
+select 

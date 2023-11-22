@@ -27,6 +27,7 @@ scroll-behavior: smooth;
     border-bottom: 2px solid #2c2c2c;
     background-color: #ee7828;
     position: fixed;
+    z-index: 10;
 }
 .container{
     display: flex;
@@ -150,23 +151,38 @@ p{
     width: 37px;
 }
 .grafico{
-    padding-top: 115px;
     width: 400px;
     height: 400px;
 }
 .dashboard{
     background-color: #2c2c2ce1;
-    display: flex;
     width: 70%;
     margin: auto;
+    height: 100%;
+}
+.dashboard .container{
+    display: flex;
     justify-content: space-evenly;
 }
 .BackgroundCovil{
     width: 100%;
     height: 100%;
-    background-image:url('assets/imgs/CovilBronze.jpg');
+    background-image:url('assets/imgs/ImagemAtaqueDg.png');
     background-repeat: no-repeat; 
     background-size: cover;
     height: 1000px;
 }
+.texto{
+    align-self: center;
+    text-align: center;
+    padding-top: 115px;
+}
+.grafico .tituloGrafico{
+    align-self: center;
+    text-align: center;
+    padding-top: 15px;
+}
+.dashboard .textoCovil{
+    padding-top: 75px;
+} 
 
