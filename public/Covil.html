@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu covil</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,16 +24,15 @@
     </div>
     <div class="BackgroundCovil">
     <div class="container">
-    <div class="banner"></div>
+    <div class="dashboard">
+        <div class="grafico">
+            <canvas id = "myChart" style="position:relative; height:50vh; width:50vw;"></canvas>      
+        </div>
+        <div class="grafico">
+            <canvas id = "myChart2"style="position:relative; height:50vh; width:50vw;"></canvas>
+        </div>
     </div>
-
-
-
-
-
-
-
-
+    </div>
     </div>
     <footer class="footer">
         <div class="container">
@@ -43,5 +43,51 @@
         </div>
     </footer>
 </body>
-
 </html>
+<script>
+Chart.defaults.color = '#FCF7F8';
+const ctx = document.getElementById('myChart');
+const ctx1 = document.getElementById('myChart2');
+
+  
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Vermelho', 'Azul', 'Verde', 'Preto', 'Branco'],
+        datasets: [{
+          label: 'Dragões cromáticos',
+          data: [20, 15, 16, 20, 23],
+          backgroundColor: ['#990000','#0275F4','#182D09','#000709','#F4F5E2'],
+          borderColor: '#000',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        scales:{
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    new Chart(ctx1, {
+      type: 'pie',
+      data: {
+        labels: ['Ouro', 'Bronze', 'Latão', 'Cobre', 'Prata'],
+        datasets: [{
+          label: 'Dragões metálicos',
+          data: [20, 12, 33, 12, 21],
+          backgroundColor: ['#DC9018','#804A00','#D4AF37','#912E17','#BEC2CB'],
+          borderColor: '#000',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+  </script>
