@@ -23,5 +23,3 @@ fkUsuario int,
 constraint fkTituloUsuario foreign key (fkUsuario)
 references usuario(idUsuario)
 );
-
-select 
