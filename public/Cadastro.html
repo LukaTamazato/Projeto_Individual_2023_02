@@ -78,7 +78,6 @@
 </html>
 <script>
   function cadastrar() {
-    aguardar();
     var tipoDragao = '';
     alinhamento = [];
     raca = [];
@@ -125,8 +124,6 @@
         mensagem_erro.innerHTML =
         alert("(Todos os campos em branco");
           return false;
-      } else {
-        setInterval(sumirMensagem, 5000);
       }
   
       // Enviando o valor da nova input
@@ -149,24 +146,17 @@
           console.log("resposta: ", resposta);
   
           if (resposta.ok) {
-            cardErro.style.display = "block";
   
-            mensagem_erro.innerHTML =
-              "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-  
+            alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
             setTimeout(() => {
-              window.location = "login.html";
+              window.location = "Login.html";
             }, "2000");
-  
-            limparFormulario();
-            finalizarAguardar();
           } else {
             throw "Houve um erro ao tentar realizar o cadastro!";
           }
         })
         .catch(function (resposta) {
           console.log(`#ERRO: ${resposta}`);
-          finalizarAguardar();
         });
   
       return false;

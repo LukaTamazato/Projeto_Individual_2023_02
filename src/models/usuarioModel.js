@@ -22,7 +22,7 @@ function cadastrar(nome, email, senha, tipoDragao, titulo) {
     var instrucao = `
         INSERT INTO dragao  (tipoDragao) VALUES('${tipoDragao}');
         INSERT INTO usuario (nome,email,senha,fkDragao)('${nome}', '${email}', '${senha}',(SELECT max(idDragao) from dragao) );
-        INSERT INTO titulo VALUES (${titulo},(SELECT max(idUsuario) from usuario));
+        INSERT INTO titulo VALUES ('${titulo}',(SELECT max(idUsuario) from usuario));
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
