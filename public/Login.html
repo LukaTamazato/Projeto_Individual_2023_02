@@ -64,6 +64,7 @@
             alert("Todos os campos em branco)");
             return false;
         }
+        
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -98,7 +99,7 @@
 
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);

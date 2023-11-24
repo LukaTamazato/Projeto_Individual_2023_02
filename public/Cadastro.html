@@ -1,78 +1,86 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <a href="index.html"><img class="icon" src="assets/imgs/IconSite.png"></a>
-            <ul class="navbar">
-                <li><span class="TituloSite"><a href="index.html #cultura">Cultura</a></span></li>
-                <li><span class="TituloSite"><a href="index.html #tiposDragoes">Tipos de dragões</a></span></li>
-                <li><span class="TituloSite"><a href="index.html #caracteristica">Caracteristicas</a></span></li>
-                <li><Span class="TituloSite"><a href="index.html #sobreMim"> Sobre Mim</a></Span></li>
-                <button class="botao"><a href="./Login.html"><span class="TituloSite" >Login</a></span></button>
-                <button class="estaAqui"><span class="TituloSite"><a href="Cadastro.html">Cadastro</a></span></button>
-            </ul>
-        </div>
+  <div class="header">
+    <div class="container">
+      <a href="index.html"><img class="icon" src="assets/imgs/IconSite.png"></a>
+      <ul class="navbar">
+        <li><span class="TituloSite"><a href="index.html#cultura">Cultura</a></span></li>
+        <li><span class="TituloSite"><a href="index.html#tiposDragoes">Tipos de dragões</a></span></li>
+        <li><span class="TituloSite"><a href="index.html#caracteristica">Caracteristicas</a></span></li>
+        <li><Span class="TituloSite"><a href="index.html#sobreMim"> Sobre Mim</a></Span></li>
+        <button class="botao"><a href="./Login.html"><span class="TituloSite">Login</a></span></button>
+        <button class="estaAqui"><span class="TituloSite"><a href="Cadastro.html">Cadastro</a></span></button>
+      </ul>
     </div>
-    <div class="backgroundCadastro">
-        <div class="banner">
-            <div class="box">
-                <h1>Crie seu covil:</h1>
-                Nome completo:
-                <div class="campo">
-                <input class="input" type="text" id="iptNome" placeholder="Joao Antonio">
-                </div>
-                Email:   
-                <div class="campo">
-                <input class="input" type="email" id="iptEmail" placeholder="joaoantonio21@mail.com">
-                </div>
-                Titulo de dragão:
-                <div class="campo">
-                <input class="input" type="text" id="iptTitulo" placeholder="Guardião das Chamas">
-                </div>
-                Senha:
-                <div class="campo">
-                <input class="input" type="password" id="iptSenha" placeholder="********">
-                </div>
-                <h3>Qual tipo de dragão você escolhe:</h3>
-                <div class="campo">
-                <select class="input" id="iptTipoDragao">
-                <option class="input" value="C">Cromático</option>
-                <option class="input" value="M">Metálico</option>
-                </select>
-                </div>
-                <h3>Qual elemento de sopro você escolhe:</h3>
-                <div class="campo">
-                <select class="input" id="iptDragao">
-                <option class="input" value="F">Fogo</option>
-                <option class="input" value="R">Raio</option>
-                <option class="input" value="G">Gelo</option>
-                <option class="input" value="V">Veneno</option>
-                <option class="input" value="A">Ácido</option>
-                </select>
-                </div>
-                <div class="campo">
-                <button class="botao" onclick="cadastrar()">Cadastrar-se</button>
-                </div>
-            </div>
+  </div>
+  <div class="backgroundCadastro">
+    <div class="banner">
+      <div class="box">
+        <h1>Crie seu covil:</h1>
+        Nome completo:
+        <div class="campo">
+          <input class="input" type="text" id="iptNome" placeholder="Joao Antonio">
         </div>
+        Email:
+        <div class="campo">
+          <input class="input" type="email" id="iptEmail" placeholder="joaoantonio21@mail.com">
+        </div>
+        Titulo de dragão:
+        <div class="campo">
+          <input class="input" type="text" id="iptTitulo" placeholder="Guardião das Chamas">
+        </div>
+        Senha:
+        <div class="campo">
+          <input class="input" type="password" id="iptSenha" placeholder="********">
+        </div>
+        <h3>Qual tipo de dragão você escolhe:</h3>
+        <div class="campo">
+          <select class="input" id="iptTipoDragao">
+            <option class="input" value="C">Cromático</option>
+            <option class="input" value="M">Metálico</option>
+          </select>
+        </div>
+        <h3>Qual elemento de sopro você escolhe:</h3>
+        <div class="campo">
+          <select class="input" id="iptDragao">
+            <option class="input" value="F">Fogo</option>
+            <option class="input" value="R">Raio</option>
+            <option class="input" value="G">Gelo</option>
+            <option class="input" value="V">Veneno</option>
+            <option class="input" value="A">Ácido</option>
+          </select>
+        </div>
+        <div class="campo">
+          <button class="botao" onclick="cadastrar()">Cadastrar-se</button>
+        </div>
+      </div>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <li><a href="https://www.instagram.com/luka.tamazato.21/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a></li>
-            <li><a href = "mailto:lukaejitamazato@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a></li>
-            <li><a href="https://www.linkedin.com/in/luka-tamazato-436b60224/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> </li>
-            <li><a href="https://github.com/LukaTamazato" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a></li>
-        </div>
-    </footer>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <li><a href="https://www.instagram.com/luka.tamazato.21/" target="_blank"><img
+            src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"
+            target="_blank"></a></li>
+      <li><a href="mailto:lukaejitamazato@gmail.com"><img
+            src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"
+            target="_blank"></a></li>
+      <li><a href="https://www.linkedin.com/in/luka-tamazato-436b60224/" target="_blank"><img
+            src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+            target="_blank"></a> </li>
+      <li><a href="https://github.com/LukaTamazato" target="_blank"><img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            target="_blank"></a></li>
+    </div>
+  </footer>
 </body>
 
 </html>
@@ -81,82 +89,106 @@
     var tipoDragao = '';
     alinhamento = [];
     raca = [];
-    tabelaDragoes = ['Vermelho','Azul','Verde','Preto','Branco','Ouro','Bronze','Latao','Cobre','Prata']
+    tabelaDragoes = ['Vermelho', 'Azul', 'Verde', 'Preto', 'Branco', 'Ouro', 'Bronze', 'Latao', 'Cobre', 'Prata']
 
-      alinhamento.push(iptTipoDragao.value);
-      raca.push(iptDragao.value);
+    alinhamento.push(iptTipoDragao.value);
+    raca.push(iptDragao.value);
 
-      if(alinhamento[alinhamento.length-1] == 'C' && raca[raca.length-1] == 'F'){
-        tipoDragao = tabelaDragoes[0];
-      }else if(alinhamento[alinhamento.length-1] == 'C' && raca[raca.length-1] == 'R'){
-        tipoDragao = tabelaDragoes[1];
-      }else if(alinhamento[alinhamento.length-1] == 'C' && raca[raca.length-1] == 'V'){
-        tipoDragao = tabelaDragoes[2];
-      }else if(alinhamento[alinhamento.length-1] == 'C' && raca[raca.length-1] == 'A'){
-        tipoDragao = tabelaDragoes[3];
-      }else if(alinhamento[alinhamento.length-1] == 'C' && raca[raca.length-1] == 'G'){
-        tipoDragao = tabelaDragoes[4];
-      }else if(alinhamento[alinhamento.length-1] == 'M' && raca[raca.length-1] == 'F'){
-        tipoDragao = tabelaDragoes[5];
-      }else if(alinhamento[alinhamento.length-1] == 'M' && raca[raca.length-1] == 'R'){
-        tipoDragao = tabelaDragoes[6];
-      }else if(alinhamento[alinhamento.length-1] == 'M' && raca[raca.length-1] == 'V'){
-        tipoDragao = tabelaDragoes[7];
-      }else if(alinhamento[alinhamento.length-1] == 'M' && raca[raca.length-1] == 'A'){
-        tipoDragao = tabelaDragoes[8];
-      }else{
-        tipoDragao = tabelaDragoes[9];
-      }
-      //Recupere o valor da nova input pelo nome do id
-      // Agora vá para o método fetch logo abaixo
-      var nomeVar = iptNome.value;
-      var emailVar = iptEmail.value;
-      var senhaVar = iptSenha.value;
-      var tituloVar = iptTitulo.value
-      var tipoDragaoVar = tipoDragao;
+    if (alinhamento[alinhamento.length - 1] == 'C' && raca[raca.length - 1] == 'F') {
+      tipoDragao = tabelaDragoes[0];
+    } else if (alinhamento[alinhamento.length - 1] == 'C' && raca[raca.length - 1] == 'R') {
+      tipoDragao = tabelaDragoes[1];
+    } else if (alinhamento[alinhamento.length - 1] == 'C' && raca[raca.length - 1] == 'V') {
+      tipoDragao = tabelaDragoes[2];
+    } else if (alinhamento[alinhamento.length - 1] == 'C' && raca[raca.length - 1] == 'A') {
+      tipoDragao = tabelaDragoes[3];
+    } else if (alinhamento[alinhamento.length - 1] == 'C' && raca[raca.length - 1] == 'G') {
+      tipoDragao = tabelaDragoes[4];
+    } else if (alinhamento[alinhamento.length - 1] == 'M' && raca[raca.length - 1] == 'F') {
+      tipoDragao = tabelaDragoes[5];
+    } else if (alinhamento[alinhamento.length - 1] == 'M' && raca[raca.length - 1] == 'R') {
+      tipoDragao = tabelaDragoes[6];
+    } else if (alinhamento[alinhamento.length - 1] == 'M' && raca[raca.length - 1] == 'V') {
+      tipoDragao = tabelaDragoes[7];
+    } else if (alinhamento[alinhamento.length - 1] == 'M' && raca[raca.length - 1] == 'A') {
+      tipoDragao = tabelaDragoes[8];
+    } else {
+      tipoDragao = tabelaDragoes[9];
+    }
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = iptNome.value;
+    var emailVar = iptEmail.value;
+    var senhaVar = iptSenha.value;
+    var tituloVar = iptTitulo.value
+    var tipoDragaoVar = tipoDragao;
+    if (nomeVar.length > 1) {
+      if (emailVar.indexOf('@') > 0 && emailVar.indexOf('.') >= 0) {
+        if (senhaVar.length > 6) {
+            if (cpfVar.length == 11) {
+              // if (){
       if (
-        nomeVar == "" ||
-        emailVar == "" ||
-        senhaVar == "" ||
-        tipoDragaoVar == "" ||
-        tituloVar == ""
-      ) {
-        alert("(Todos os campos em branco");
+                  nomeVar == "" ||
+                  emailVar == "" ||
+                  senhaVar == "" ||
+                  tipoDragaoVar == "" ||
+                  tituloVar == ""
+                ) {
+                  alert("(Todos os campos em branco");
+                }
+
+              // Enviando o valor da nova input
+              fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  // crie um atributo que recebe o valor recuperado aqui
+                  // Agora vá para o arquivo routes/usuario.js
+                  nomeServer: nomeVar,
+                  emailServer: emailVar,
+                  senhaServer: senhaVar,
+                  tipoDragaoServer: tipoDragaoVar,
+                  tituloServer: tituloVar
+                }),
+              })
+                .then(function (resposta) {
+                  console.log("resposta: ", resposta);
+
+                  if (resposta.ok) {
+
+                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                    setTimeout(() => {
+                      window.location = "Login.html";
+                    }, "2000");
+                  } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                  }
+                })
+                .catch(function (resposta) {
+                  console.log(`#ERRO: ${resposta}`);
+                });
+
+              return false;
+              // }
+            } else {
+              alert("Seu cpf não está válido, Não utilize o pontos nem barras");
+              return false;
+            }
+        } else {
+
+          alert("Sua senha ter pelo menos 7 caracteres");
+          return false;
+        }
+      } else {
+
+        alert("Seu email precisa ter pelo @ e .");
+        return false;
       }
-  
-      // Enviando o valor da nova input
-      fetch("/usuarios/cadastrar", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          // crie um atributo que recebe o valor recuperado aqui
-          // Agora vá para o arquivo routes/usuario.js
-          nomeServer: nomeVar,
-          emailServer: emailVar,
-          senhaServer: senhaVar,
-          tipoDragaoServer: tipoDragaoVar,
-          tituloServer: tituloVar 
-        }), 
-      })
-        .then(function (resposta) {
-          console.log("resposta: ", resposta);
-  
-          if (resposta.ok) {
-  
-            alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
-            setTimeout(() => {
-              window.location = "Login.html";
-            }, "2000");
-          } else {
-            throw "Houve um erro ao tentar realizar o cadastro!";
-          }
-        })
-        .catch(function (resposta) {
-          console.log(`#ERRO: ${resposta}`);
-        });
-  
+    } else {
+      alert("Seu nome precisa ter pelo menos 2 caracteres");
       return false;
     }
-  </script>
+  }
+</script>
