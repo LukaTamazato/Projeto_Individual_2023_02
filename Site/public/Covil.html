@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu covil</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <a href="index.html"><img class="icon" src="assets/imgs/IconSite.png"></a>
+      <ul class="navbar">
+        <li><span class="TituloSite"><a href="index.html #cultura">Cultura</a></span></li>
+        <li><span class="TituloSite"><a href="index.html #tiposDragoes">Tipos de dragões</a></span></li>
+        <li><span class="TituloSite"><a href="index.html #caracteristica">Caracteristicas</a></span></li>
+        <li><Span class="TituloSite"><a href="index.html #sobreMim"> Sobre Mim</a></Span></li>
+        <button class="botao"><a href="Login.html"><img class="icon" src="assets/imgs/IconUsuario.png"></a></button>
+      </ul>
+    </div>
+  </div>
+  <div class="BackgroundCovil">
+    <div class="dashboard">
+      <div class="texto">
+        <h1>Situação dos dragões no mundo:</h1>
+      </div>
+      <div class="container">
+
+        <div class="grafico">
+          <h2 class="tituloGrafico">Dragões Cromáticos</h2>
+          <canvas id="myChart" style="position:relative; height:50vh; width:50vw;"></canvas>
+        </div>
+        <div class="grafico">
+          <h2 class="tituloGrafico">Dragões Metálicos</h2>
+          <canvas id="myChart2" style="position:relative; height:50vh; width:50vw;"></canvas>
+        </div>
+      </div>
+      <div class="boxTexto">
+        <div class="textoCovil">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi magnam molestiae
+          obcaecati voluptatum incidunt? Nemo est doloribus nihil hic quia? Ratione sint, quaerat ab nostrum sed commodi
+          minus corporis accusantium!
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <li><a href="https://www.instagram.com/luka.tamazato.21/" target="_blank"><img
+            src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"
+            target="_blank"></a></li>
+      <li><a href="mailto:lukaejitamazato@gmail.com"><img
+            src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"
+            target="_blank"></a></li>
+      <li><a href="https://www.linkedin.com/in/luka-tamazato-436b60224/" target="_blank"><img
+            src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+            target="_blank"></a> </li>
+      <li><a href="https://github.com/LukaTamazato" target="_blank"><img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            target="_blank"></a></li>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script>
+  Chart.defaults.color = '#FCF7F8';
+  const ctx = document.getElementById('myChart');
+  const ctx1 = document.getElementById('myChart2');
+
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Vermelho', 'Azul', 'Verde', 'Preto', 'Branco'],
+      datasets: [{
+        label: 'Dragões cromáticos',
+        data: [1, 2, 3, 4, 5],
+        backgroundColor: ['#990000', '#0275F4', '#182D09', '#000709', '#F4F5E2'],
+        borderColor: '#000',
+        borderWidth: 3
+      }]
+    },
+    options: {
+
+    }
+  });
+  new Chart(ctx1, {
+    type: 'pie',
+    data: {
+      labels: ['Ouro', 'Bronze', 'Latão', 'Cobre', 'Prata'],
+      datasets: [{
+        label: 'Dragões metálicos',
+        data: [6,7, 8, 9, 2],
+        backgroundColor: ['#DC9018', '#804A00', '#D4AF37', '#912E17', '#BEC2CB'],
+        borderColor: '#000',
+        borderWidth: 3
+      }]
+    },
+    options: {
+
+    }
+  });
+
+  obtemDados();
+
+  function obtemDados() {
+    fetch("/usuarios/dashboard", {
+      method: "GET",
+      // headers: {
+      //   "Content-Type": "application/json"
+      // },
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+          json.lista;
+          console.log(json.count(tipoDragao)[0]);
+        })
+      } else {
+
+        console.log("Houve um erro na captura dos dados!");
+
+        resposta.text().then(texto => {
+          console.error(texto);
+        });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
+
+</script>

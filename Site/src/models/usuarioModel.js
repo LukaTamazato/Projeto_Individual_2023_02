@@ -27,8 +27,31 @@ function cadastrar(nome, email, senha, tipoDragao, titulo) {
     database.executar(insereUsuario);
     return database.executar(insereTitulo);
 }
+    function dashboard (){
 
+        var selectTipoDragaoCromatico = `select tipoDragao ,count(tipoDragao) qtdDrag
+        from dragao where 
+            tipoDragao = 'Vermelho' OR
+            tipoDragao ='Azul'OR
+            tipoDragao ='Verde' OR
+            tipoDragao ='Preto' OR
+            tipoDragao ='Branco' 
+        group by tipoDragao;`;
+
+        var selectTipoDragaoMetalico = `select tipoDragao ,count(tipoDragao) qtdDrag
+        from dragao where 
+            tipoDragao = 'Ouro' OR
+            tipoDragao ='Bronze' OR
+            tipoDragao = 'Latao' OR
+            tipoDragao = 'Cobre' OR 
+            tipoDragao = 'Prata'
+        group by tipoDragao;`;
+        
+        database.executar(selectTipoDragaoCromatico);
+        database.executar(selectTipoDragaoMetalico);
+    }
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    dashboard
 };

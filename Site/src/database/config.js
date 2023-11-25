@@ -6,7 +6,7 @@ var mySqlConfig = {
     host: "localhost",
     database: "ProjetoIndividual20232",
     user: "root",
-    password: "root",
+    password: "123456",
     port: '3306',
 };
 
