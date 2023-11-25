@@ -122,10 +122,10 @@
     var senhaVar = iptSenha.value;
     var tituloVar = iptTitulo.value
     var tipoDragaoVar = tipoDragao;
+
     if (nomeVar.length > 1) {
       if (emailVar.indexOf('@') > 0 && emailVar.indexOf('.') >= 0) {
         if (senhaVar.length > 6) {
-            if (cpfVar.length == 11) {
               // if (){
       if (
                   nomeVar == "" ||
@@ -172,10 +172,6 @@
 
               return false;
               // }
-            } else {
-              alert("Seu cpf não está válido, Não utilize o pontos nem barras");
-              return false;
-            }
         } else {
 
           alert("Sua senha ter pelo menos 7 caracteres");

@@ -29,26 +29,35 @@ function cadastrar(nome, email, senha, tipoDragao, titulo) {
 }
     function dashboard (){
 
-        var selectTipoDragaoCromatico = `select tipoDragao ,count(tipoDragao) qtdDrag
-        from dragao where 
-            tipoDragao = 'Vermelho' OR
-            tipoDragao ='Azul'OR
-            tipoDragao ='Verde' OR
-            tipoDragao ='Preto' OR
-            tipoDragao ='Branco' 
-        group by tipoDragao;`;
+        // var selectTipoDragaoCromatico = `select count(tipoDragao) qtdDrag
+        // from dragao where 
+        //     tipoDragao = 'Vermelho' OR
+        //     tipoDragao ='Azul'OR
+        //     tipoDragao ='Verde' OR
+        //     tipoDragao ='Preto' OR
+        //     tipoDragao = 'Branco'
+        // group by tipoDragao 
+        // order by tipoDragao;
+        // `;
 
-        var selectTipoDragaoMetalico = `select tipoDragao ,count(tipoDragao) qtdDrag
-        from dragao where 
-            tipoDragao = 'Ouro' OR
-            tipoDragao ='Bronze' OR
-            tipoDragao = 'Latao' OR
-            tipoDragao = 'Cobre' OR 
-            tipoDragao = 'Prata'
-        group by tipoDragao;`;
+        // var selectTipoDragaoMetalico = `select count(tipoDragao) qtdDrag
+        // from dragao where 
+        //     tipoDragao = 'Ouro' OR
+        //     tipoDragao ='Bronze' OR
+        //     tipoDragao = 'Latao' OR
+        //     tipoDragao = 'Cobre' OR 
+        //     tipoDragao = 'Prata'
+        // group by tipoDragao
+        // order by tipoDragao;
+        // `;
+
+        var selectTipoDragao = `select tipoDragao,count(tipoDragao) qtdDrag
+        from dragao 
+        group by tipoDragao
+        order by tipoDragao;`
         
-        database.executar(selectTipoDragaoCromatico);
-        database.executar(selectTipoDragaoMetalico);
+
+        return database.executar(selectTipoDragao);
     }
 module.exports = {
     autenticar,

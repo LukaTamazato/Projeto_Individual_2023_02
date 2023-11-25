@@ -1,6 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
 
-
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -86,25 +85,18 @@ function cadastrar(req, res) {
 }
 
 function dashboard (req, res) {
-    // var tipoDragao = req.body.tipoDragaoServer;
-    // if (tipoDragao == undefined) {
-    //     res.status(400).send("Seu tipo de dragão está undefined!"); 
-    // }
     usuarioModel.dashboard()
             .then(
                 function (resultadoDashboard){
-                    console.log(`\nResultados encontrados: ${resultadoDashboard.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoDashboard)}`);
                 if (resultadoDashboard.length > 0) {
-                            console.log(resultadoDashboard);
-                            res.json({
-                                    tipoDragao: resultadoDashboard.tipoDragao,
-                                    qtdDrag: resultadoDashboard.qtdDrag
-                                })
+                    res.json({
+                        tipoDragao:resultadoDashboard.tipoDragao,
+                        qtdDrag:resultadoDashboard.qtdDrag,
+                    })
+                    console.log(json.qtdDrag);
                 }else{
                     console.log('Houve um erro ao capturar os dados!');
                 }
-
                 }).catch(
                 function (erro) {
                     console.log(erro);

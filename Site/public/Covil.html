@@ -109,19 +109,20 @@
   function obtemDados() {
     fetch("/usuarios/dashboard", {
       method: "GET",
-      // headers: {
-      //   "Content-Type": "application/json"
-      // },
+      cache:"no-store",
+      headers: {
+        "Content-Type": "application/json"
+      },
     }).then(function (resposta) {
+      console.log("resposta: ", resposta);
       console.log("ESTOU NO THEN DO entrar()!")
 
       if (resposta.ok) {
-        console.log(resposta);
+        
         resposta.json().then(json => {
-          console.log(json);
-          console.log(JSON.stringify(json));
-          json.lista;
-          console.log(json.count(tipoDragao)[0]);
+        console.log(json);
+        console.log(JSON.stringify(json));
+        // console.log(json.)
         })
       } else {
 

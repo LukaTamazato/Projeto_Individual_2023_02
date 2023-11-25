@@ -26,26 +26,23 @@ references usuario(idUsuario)
 
 
 -- Select das dashboards
-select tipoDragao ,count(tipoDragao)
+select tipoDragao, count(tipoDragao)
 from dragao where 
-	tipoDragao = 'Vermelho' OR
-	tipoDragao ='Azul'OR
-	tipoDragao ='Verde' OR
-    tipoDragao ='Preto' OR
-    tipoDragao ='Branco' 
-group by tipoDragao;
+	tipoDragao = 'Azul' OR
+	tipoDragao = 'Branco' OR
+	tipoDragao ='Preto' OR
+    tipoDragao = 'Verde' OR
+    tipoDragao = 'Vermelho'
+group by tipoDragao 
+order by tipoDragao;
 
 select * from dragao;
 select * from usuario;
 
-select tipoDragao ,count(tipoDragao)
-from dragao where 
-	tipoDragao = 'Ouro' OR
-    tipoDragao ='Bronze' OR
-    tipoDragao = 'Latao' OR
-    tipoDragao = 'Cobre' OR 
-    tipoDragao = 'Prata'
-group by tipoDragao;
+select tipoDragao,count(tipoDragao)
+from dragao 
+group by tipoDragao
+order by tipoDragao;
 
 -- Inserir dados na tabela 'dragao'
 INSERT INTO dragao (tipoDragao) VALUES 
