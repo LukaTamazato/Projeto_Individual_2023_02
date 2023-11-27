@@ -1,7 +1,6 @@
 create database ProjetoIndividual20232;
 use ProjetoIndividual20232;
 
-
 create table dragao(
 idDragao int primary key auto_increment,
 tipoDragao varchar(10)

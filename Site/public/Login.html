@@ -98,9 +98,7 @@
                 });
 
             } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
+                alert('Houve um erro ao tentar realizar o login!, Sua senha ou usuario está errado')
                 resposta.text().then(texto => {
                     console.error(texto);
                 });
