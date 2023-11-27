@@ -16,13 +16,11 @@ function cadastrar(nome, email, senha, tipoDragao, titulo) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
 
-    // var instrucao = `SELECT * from dragao;`
-    // var resultadoDragao = await database.executar(instrucao)
-    // '${resultadoDragao[resultadoDragao.length - 1].idDragao}'
+
     var insereDragao = `INSERT INTO dragao  (tipoDragao) VALUES('${tipoDragao}');`;
     var insereUsuario = `INSERT INTO usuario (nome,email,senha,fkDragao) VALUES ('${nome}', '${email}', '${senha}', (SELECT max(idDragao) from dragao) );`
     var insereTitulo = `INSERT INTO titulo (titulo, fkUsuario) VALUES ('${titulo}',(SELECT max(idUsuario) from usuario));`
-    // console.log("Executando a instrução SQL: \n" + instrucao);
+
     database.executar(insereDragao);
     database.executar(insereUsuario);
     return database.executar(insereTitulo);
@@ -51,7 +49,7 @@ function cadastrar(nome, email, senha, tipoDragao, titulo) {
         // order by tipoDragao;
         // `;
 
-        var selectTipoDragao = `select tipoDragao,count(tipoDragao) qtdDrag
+        var selectTipoDragao = `select count(tipoDragao) qtdDrag
         from dragao 
         group by tipoDragao
         order by tipoDragao;`

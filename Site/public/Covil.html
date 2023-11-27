@@ -14,11 +14,11 @@
     <div class="container">
       <a href="index.html"><img class="icon" src="assets/imgs/IconSite.png"></a>
       <ul class="navbar">
-        <li><span class="TituloSite"><a href="index.html #cultura">Cultura</a></span></li>
-        <li><span class="TituloSite"><a href="index.html #tiposDragoes">Tipos de dragões</a></span></li>
-        <li><span class="TituloSite"><a href="index.html #caracteristica">Caracteristicas</a></span></li>
-        <li><Span class="TituloSite"><a href="index.html #sobreMim"> Sobre Mim</a></Span></li>
-        <button class="botao"><a href="Login.html"><img class="icon" src="assets/imgs/IconUsuario.png"></a></button>
+        <li><span class="TituloSite"><a href="index.html#cultura">Cultura</a></span></li>
+        <li><span class="TituloSite"><a href="index.html#tiposDragoes">Tipos de dragões</a></span></li>
+        <li><span class="TituloSite"><a href="index.html#caracteristicas">Caracteristicas</a></span></li>
+        <li><Span class="TituloSite"><a href="index.html#sobreMim"> Sobre Mim</a></Span></li>
+        <button class="botao" onclick="(() => window.location.href = 'Login.html')()"><img class="icon" src="assets/imgs/IconUsuario.png"></button>
       </ul>
     </div>
   </div>
@@ -38,30 +38,39 @@
           <canvas id="myChart2" style="position:relative; height:50vh; width:50vw;"></canvas>
         </div>
       </div>
-      <div class="boxTexto">
-        <div class="textoCovil">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi magnam molestiae
-          obcaecati voluptatum incidunt? Nemo est doloribus nihil hic quia? Ratione sint, quaerat ab nostrum sed commodi
-          minus corporis accusantium!
+      <div class="boxDashboard">
+          <div id="KPIsCromatico" class="boxKPIs">
+          </div>
+          <div id="KPIsMetalico" class="boxKPIs">
+          </div>
+      </div>
+
+        <div class="boxTexto">
+          
+          <div class="textoCovil"><h1>Seu covil:</h1><br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi magnam molestiae
+            obcaecati voluptatum incidunt? Nemo est doloribus nihil hic quia? Ratione sint, quaerat ab nostrum sed
+            commodi
+            minus corporis accusantium!
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer class="footer">
-    <div class="container">
-      <li><a href="https://www.instagram.com/luka.tamazato.21/" target="_blank"><img
-            src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"
-            target="_blank"></a></li>
-      <li><a href="mailto:lukaejitamazato@gmail.com"><img
-            src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"
-            target="_blank"></a></li>
-      <li><a href="https://www.linkedin.com/in/luka-tamazato-436b60224/" target="_blank"><img
-            src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"
-            target="_blank"></a> </li>
-      <li><a href="https://github.com/LukaTamazato" target="_blank"><img
-            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            target="_blank"></a></li>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="container">
+        <li><a href="https://www.instagram.com/luka.tamazato.21/" target="_blank"><img
+              src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"
+              target="_blank"></a></li>
+        <li><a href="mailto:lukaejitamazato@gmail.com"><img
+              src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"
+              target="_blank"></a></li>
+        <li><a href="https://www.linkedin.com/in/luka-tamazato-436b60224/" target="_blank"><img
+              src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+              target="_blank"></a> </li>
+        <li><a href="https://github.com/LukaTamazato" target="_blank"><img
+              src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+              target="_blank"></a></li>
+      </div>
+    </footer>
 </body>
 
 </html>
@@ -69,47 +78,15 @@
   Chart.defaults.color = '#FCF7F8';
   const ctx = document.getElementById('myChart');
   const ctx1 = document.getElementById('myChart2');
+  var usuarioDragao = [];
 
-
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Vermelho', 'Azul', 'Verde', 'Preto', 'Branco'],
-      datasets: [{
-        label: 'Dragões cromáticos',
-        data: [1, 2, 3, 4, 5],
-        backgroundColor: ['#990000', '#0275F4', '#182D09', '#000709', '#F4F5E2'],
-        borderColor: '#000',
-        borderWidth: 3
-      }]
-    },
-    options: {
-
-    }
-  });
-  new Chart(ctx1, {
-    type: 'pie',
-    data: {
-      labels: ['Ouro', 'Bronze', 'Latão', 'Cobre', 'Prata'],
-      datasets: [{
-        label: 'Dragões metálicos',
-        data: [6,7, 8, 9, 2],
-        backgroundColor: ['#DC9018', '#804A00', '#D4AF37', '#912E17', '#BEC2CB'],
-        borderColor: '#000',
-        borderWidth: 3
-      }]
-    },
-    options: {
-
-    }
-  });
 
   obtemDados();
 
   function obtemDados() {
     fetch("/usuarios/dashboard", {
       method: "GET",
-      cache:"no-store",
+      cache: "no-store",
       headers: {
         "Content-Type": "application/json"
       },
@@ -118,11 +95,11 @@
       console.log("ESTOU NO THEN DO entrar()!")
 
       if (resposta.ok) {
-        
         resposta.json().then(json => {
-        console.log(json);
-        console.log(JSON.stringify(json));
-        // console.log(json.)
+          console.log(json);
+          console.log(JSON.stringify(json));
+          insereNoVetor(json.qtdDrag);
+          console.log(json.qtdDrag);
         })
       } else {
 
@@ -138,6 +115,64 @@
     })
 
     return false;
+  }
+  function insereNoVetor(resultadoDashboard) {
+    for (var adicionaQtdDrag = 0; adicionaQtdDrag <= (resultadoDashboard.length) - 1; adicionaQtdDrag += 1) {
+      usuarioDragao.push(resultadoDashboard[adicionaQtdDrag].qtdDrag);
+      console.log(resultadoDashboard[adicionaQtdDrag].qtdDrag);
+    }
+    plotaGrafico();
+  }
+  function plotaGrafico() {
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [`Vermelho: ${usuarioDragao[9]}`,`Azul: ${usuarioDragao[0]}`, `Verde: ${usuarioDragao[8]}`, `Preto: ${usuarioDragao[7]}`, `Branco: ${usuarioDragao[1]}`],
+        datasets: [{
+          label: 'Dragões cromáticos',
+          data: [usuarioDragao[9], usuarioDragao[0], usuarioDragao[8], usuarioDragao[7], usuarioDragao[1]],
+          backgroundColor: ['#990000', '#0275F4', '#182D09', '#000709', '#F4F5E2'],
+          borderColor: '#000',
+          borderWidth: 3
+        }]
+      },
+      options: {
+      plugins: {
+        legend: {
+          position: "bottom",
+        },
+      },
+    },
+  });
+    new Chart(ctx1, {
+      type: 'pie',
+      data: {
+        labels: [`Ouro: ${usuarioDragao[5]}`,`Bronze: ${usuarioDragao[2]}`, `Latão: ${usuarioDragao[4]}`, `Cobre: ${usuarioDragao[3]}`, `Prata: ${usuarioDragao[6]}`],
+        datasets: [{
+          label: 'Dragões metálicos',
+          data: [usuarioDragao[5], usuarioDragao[2], usuarioDragao[4], usuarioDragao[3], usuarioDragao[6]],
+          backgroundColor: ['#DC9018', '#804A00', '#D4AF37', '#912E17', '#BEC2CB'],
+          borderColor: '#000',
+          borderWidth: 3
+        }]
+      },
+      options: {
+      plugins: {
+        legend: {
+          position: "bottom",
+        },
+      },
+    },
+  });
+
+    KPIsCromatico.innerHTML = `
+      Total: ${usuarioDragao[9]+usuarioDragao[0]+usuarioDragao[8]+usuarioDragao[7]+usuarioDragao[1]}`
+
+
+    KPIsMetalico.innerHTML = ` 
+      Total: ${usuarioDragao[5]+usuarioDragao[2]+usuarioDragao[3]+usuarioDragao[4]+usuarioDragao[6]}
+      `
   }
 
 </script>

@@ -6,6 +6,9 @@ margin: 0;
 padding: 0%;
 scroll-behavior: smooth;
 }
+button{
+    cursor: pointer;
+}
 .imagens{
     width: 500px;
 
@@ -184,5 +187,15 @@ p{
 }
 .dashboard .textoCovil{
     padding-top: 75px;
+    text-align: center;
 } 
-
+.boxKPIs{
+    width: 50%;
+    padding-top: 45px;
+    text-align: center;
+}
+.boxDashboard{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}

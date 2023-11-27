@@ -17,8 +17,8 @@
         <li><span class="TituloSite"><a href="index.html#tiposDragoes">Tipos de dragões</a></span></li>
         <li><span class="TituloSite"><a href="index.html#caracteristica">Caracteristicas</a></span></li>
         <li><Span class="TituloSite"><a href="index.html#sobreMim"> Sobre Mim</a></Span></li>
-        <button class="botao"><a href="./Login.html"><span class="TituloSite">Login</a></span></button>
-        <button class="estaAqui"><span class="TituloSite"><a href="Cadastro.html">Cadastro</a></span></button>
+        <button class="botao" onclick="(() => window.location.href = 'Login.html')()"><span class="TituloSite">Login</span></button>
+        <button class="estaAqui" onclick="(() => window.location.href = 'Cadastro.html')()"><span class="TituloSite">Cadastro</span></button>
       </ul>
     </div>
   </div>
@@ -125,8 +125,7 @@
 
     if (nomeVar.length > 1) {
       if (emailVar.indexOf('@') > 0 && emailVar.indexOf('.') >= 0) {
-        if (senhaVar.length > 6) {
-              // if (){
+        if (senhaVar.length > 7) {
       if (
                   nomeVar == "" ||
                   emailVar == "" ||
@@ -163,6 +162,7 @@
                       window.location = "Login.html";
                     }, "2000");
                   } else {
+                    alert('Este titulo já está sendo usado');
                     throw "Houve um erro ao tentar realizar o cadastro!";
                   }
                 })
@@ -173,7 +173,6 @@
               return false;
               // }
         } else {
-
           alert("Sua senha ter pelo menos 7 caracteres");
           return false;
         }

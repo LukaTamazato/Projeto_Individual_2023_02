@@ -1,5 +1,6 @@
 var usuarioModel = require("../models/usuarioModel");
 
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -90,10 +91,9 @@ function dashboard (req, res) {
                 function (resultadoDashboard){
                 if (resultadoDashboard.length > 0) {
                     res.json({
-                        tipoDragao:resultadoDashboard.tipoDragao,
-                        qtdDrag:resultadoDashboard.qtdDrag,
+                        qtdDrag:resultadoDashboard
                     })
-                    console.log(json.qtdDrag);
+       
                 }else{
                     console.log('Houve um erro ao capturar os dados!');
                 }
@@ -108,7 +108,7 @@ function dashboard (req, res) {
                 }
             );
 }
-
+         
 module.exports = {
     autenticar,
     cadastrar,
