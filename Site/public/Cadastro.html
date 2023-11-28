@@ -164,6 +164,7 @@
                   } else {
                     alert('Este titulo já está sendo usado');
                     throw "Houve um erro ao tentar realizar o cadastro!";
+                    return false;
                   }
                 })
                 .catch(function (resposta) {

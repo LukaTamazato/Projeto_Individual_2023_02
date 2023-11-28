@@ -52,7 +52,7 @@ function cadastrar(req, res) {
     var tipoDragao = req.body.tipoDragaoServer;
     var titulo = req.body.tituloServer;
 
-
+console.log(nome);
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -67,10 +67,18 @@ function cadastrar(req, res) {
     }else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha,tipoDragao,titulo )
+        usuarioModel.cadastrarTitulo(titulo)
             .then(
                 function (resultado) {
-                    res.json(resultado);
+                    usuarioModel.cadastrarTipoDragao(tipoDragao)
+                    .then(function(){
+                        console.log(nome);
+                        console.log("------------");
+                        usuarioModel.cadastrarUsuario(nome,email,senha)
+                        .then(function(){
+                            res.status(200).send()
+                        })
+                    })
                 }
             ).catch(
                 function (erro) {
