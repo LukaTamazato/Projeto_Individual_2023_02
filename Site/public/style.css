@@ -6,8 +6,9 @@ margin: 0;
 padding: 0%;
 scroll-behavior: smooth;
 }
-button{
+button:hover{
     cursor: pointer;
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(238,41,9,1) 35%, rgba(255,79,0,1) 100%);
 }
 .imagens{
     width:50%;
@@ -222,6 +223,8 @@ h2{
 .dashboard .textoCovil{
     padding-top: 60px;
     text-align: center;
+    width: 80%;
+    margin: auto;
 } 
 .boxKPIs{
     width: 50%;
