@@ -82,6 +82,7 @@
 
 
   obtemDados();
+  plotaGrafico();
 
   function obtemDados() {
     fetch("/usuarios/dashboard", {
@@ -128,10 +129,14 @@
     new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: [`Vermelho: ${usuarioDragao[9]}`,`Azul: ${usuarioDragao[0]}`, `Verde: ${usuarioDragao[8]}`, `Preto: ${usuarioDragao[7]}`, `Branco: ${usuarioDragao[1]}`],
+        labels: [`Vermelho: `+5,`Azul: `+4, `Verde: `+7 , `Preto: `+12, `Branco: `+9],
+        // Comentado pela estética do site
+        // labels: [`Vermelho: ${usuarioDragao[9]}`,`Azul: ${usuarioDragao[0]}`, `Verde: ${usuarioDragao[8]}`, `Preto: ${usuarioDragao[7]}`, `Branco: ${usuarioDragao[1]}`],
         datasets: [{
           label: 'Dragões cromáticos',
-          data: [usuarioDragao[9], usuarioDragao[0], usuarioDragao[8], usuarioDragao[7], usuarioDragao[1]],
+          data: [5, 4, 7, 12,9],
+          // Comentado pela estética do site
+          // data: [usuarioDragao[9], usuarioDragao[0], usuarioDragao[8], usuarioDragao[7], usuarioDragao[1]],
           backgroundColor: ['#990000', '#0275F4', '#182D09', '#000709', '#F4F5E2'],
           borderColor: '#000',
           borderWidth: 3
@@ -148,10 +153,14 @@
     new Chart(ctx1, {
       type: 'pie',
       data: {
-        labels: [`Ouro: ${usuarioDragao[5]}`,`Bronze: ${usuarioDragao[2]}`, `Latão: ${usuarioDragao[4]}`, `Cobre: ${usuarioDragao[3]}`, `Prata: ${usuarioDragao[6]}`],
+        labels: [`Ouro: `+12,`Bronze: `+5, `Latão: `+6, `Cobre: `+8, `Prata: `+11],
+        // Comentando pela estética do site
+        // labels: [`Ouro: ${usuarioDragao[5]}`,`Bronze: ${usuarioDragao[2]}`, `Latão: ${usuarioDragao[4]}`, `Cobre: ${usuarioDragao[3]}`, `Prata: ${usuarioDragao[6]}`],
         datasets: [{
+          data: [12, 5, 6, 8, 11],
           label: 'Dragões metálicos',
-          data: [usuarioDragao[5], usuarioDragao[2], usuarioDragao[4], usuarioDragao[3], usuarioDragao[6]],
+          // Comentado pela estética do site
+          // data: [usuarioDragao[5], usuarioDragao[2], usuarioDragao[4], usuarioDragao[3], usuarioDragao[6]],
           backgroundColor: ['#DC9018', '#804A00', '#D4AF37', '#912E17', '#BEC2CB'],
           borderColor: '#000',
           borderWidth: 3
@@ -166,13 +175,13 @@
     },
   });
 
-    KPIsCromatico.innerHTML = `
-      Total: ${usuarioDragao[9]+usuarioDragao[0]+usuarioDragao[8]+usuarioDragao[7]+usuarioDragao[1]}`
+    KPIsCromatico.innerHTML = 
+    //`Total: ${usuarioDragao[9]+usuarioDragao[0]+usuarioDragao[8]+usuarioDragao[7]+usuarioDragao[1]}`
+    `Total: `+37
 
-
-    KPIsMetalico.innerHTML = ` 
-      Total: ${usuarioDragao[5]+usuarioDragao[2]+usuarioDragao[3]+usuarioDragao[4]+usuarioDragao[6]}
-      `
+    KPIsMetalico.innerHTML = 
+    //`Total: ${usuarioDragao[5]+usuarioDragao[2]+usuarioDragao[3]+usuarioDragao[4]+usuarioDragao[6]}`
+     `Total:`+42
   }
 
 </script>
